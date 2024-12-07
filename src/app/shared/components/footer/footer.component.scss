@@ -1,0 +1,143 @@
+@import "src/styles/variables";
+
+footer {
+  background-color: #F4F4F4;
+
+  .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 94px 160px;
+
+    @media(max-width: 730px) {
+      padding: 40px 40px;
+    }
+
+    @media(max-width: 450px) {
+      padding: 50px 40px 20px 40px;
+    }
+  }
+
+  .info-img {
+    margin-bottom: 60px;
+  }
+
+  .info-text {
+    width: 300px;
+    font-family: $gilroy;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 170%;
+    color: $black;
+    margin-bottom: 96px;
+
+    @media(max-width: 520px) {
+      display: none;
+    }
+  }
+
+  .info-rights {
+    font-family: $gilroy;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $black;
+
+    @media(max-width: 520px) {
+      display: none;
+    }
+  }
+
+  .nav-title {
+    font-family: $gilroy;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #161616;
+    margin-bottom: 39px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 47px;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    font-family: $gilroy;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: $black;
+    margin-bottom: 20px;
+    transition: .3s;
+
+    &:hover {
+      color: $light-orange;
+    }
+  }
+
+  .social-link {
+    margin-right: 10px;
+  }
+
+  .contact {
+    margin-bottom: 48px;
+  }
+
+  .contacts-title {
+    font-family: $gilroy;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: #161616;
+    margin-bottom: 24px;
+  }
+
+  .address-title {
+    font-family: $gilroy;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: $grey;
+    margin-bottom: 14px;
+  }
+
+  .address-subtitle {
+    font-family: $gilroy;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $black;
+  }
+
+  .responsive-rights {
+    display: none;
+    @media(max-width: 520px) {
+      display: block;
+    }
+  }
+
+  @media(max-width: 980px) {
+    .info, .nav-title, .nav-links, .contacts {
+      margin-bottom: 40px;
+    }
+  }
+
+  @media(max-width: 730px) {
+    .nav-title, .nav-links {
+      display: none;
+    }
+  }
+
+  @media(max-width: 395px) {
+    .contacts {
+      margin-bottom: 0;
+    }
+  }
+
+
+}
+

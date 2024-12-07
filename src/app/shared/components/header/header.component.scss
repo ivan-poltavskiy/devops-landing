@@ -1,0 +1,252 @@
+@import '/src/styles/variables';
+
+.header {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 39px;
+  font-family: $gilroy;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+
+  .header-nav {
+    display: flex;
+    align-items: center;
+
+    .active {
+      color: $light-orange;
+    }
+  }
+
+  .logo {
+    margin-right: 70px;
+  }
+
+  .nav-link {
+    margin-right: 49px;
+    text-decoration: none;
+    color: $dark-brown;
+    transition: .3s;
+
+    &:hover {
+      color: $light-orange;
+    }
+  }
+
+  .phone-link {
+    margin-right: 45px;
+    text-decoration: none;
+    color: $dark-brown;
+    transition: .3s;
+
+    &:hover {
+      color: $light-orange;
+    }
+  }
+
+  select {
+    width: 34px;
+    height: 15px;
+    border: none;
+    outline: none;
+    background: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position-x: 85%;
+    background-position-y: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='4' viewBox='0 0 8 4' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 4L0 0H8L4 4Z' fill='black'/%3E%3C/svg%3E%0A");
+  }
+
+  option {
+    font-family: $gilroy;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: $black;
+  }
+
+  .options {
+    display: flex;
+  }
+
+  @media(max-width: 980px) {
+    .nav-link, .options {
+      display: none;
+    }
+  }
+}
+
+.language-dropdown {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  & p {
+    margin-right: 10px;
+  }
+
+  .dropdown-body {
+    position: absolute;
+    background: $light-orange;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid $white;
+    border-radius: 5px;
+    right: -2px;
+    color: $white;
+  }
+
+  .burger-selector {
+    right: 70px;
+    bottom: -34px;
+  }
+}
+
+.selector {
+  margin: 0 auto;
+}
+
+.show-drop {
+  display: block;
+}
+
+
+.burger {
+  display: none;
+
+  &-nav {
+    text-align: center;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 200px;
+    right: 20px;
+    top: 67px;
+    animation: 0.5s ease-in-out animation;
+
+    & select {
+      margin: 0 auto 10px;
+    }
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    margin-top: 20px;
+  }
+
+  &-link {
+    text-decoration: none;
+    color: $dark-brown;
+    transition: .3s;
+    margin-bottom: 10px;
+
+    &:hover {
+      color: $light-orange;
+    }
+  }
+
+  &-phone {
+    margin: 0 auto 10px;
+    padding-bottom: 10px;
+  }
+
+  .menu-button {
+    display: none;
+
+    .menu__icon {
+      z-index: 5;
+      display: block;
+      position: relative;
+      width: 30px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .menu__icon:after,
+    .menu__icon:before,
+    .menu__icon span {
+      left: 0;
+      position: absolute;
+      height: 10%;
+      width: 100%;
+      transition: all 0.3s ease 0s;
+      background-color: #212121;
+      border-radius: 2px;
+    }
+
+    .menu__icon:after,
+    .menu__icon:before {
+      content: ""
+    }
+
+    .menu__icon:before {
+      top: 0;
+      width: 50%;
+      left: auto;
+      right: 0;
+    }
+
+    .menu__icon:after {
+      bottom: 0;
+      width: 50%;
+    }
+
+    .menu__icon span {
+      top: 50%;
+      -webkit-transform: scale(1) translate(0, -50%);
+      transform: scale(1) translate(0, -50%)
+    }
+
+    .menu__icon._active:after,
+    .menu__icon._active:before,
+    .menu__icon._active span {
+      background-color: #817979;
+    }
+
+    .menu__icon._active span {
+      -webkit-transform: scale(0) translate(0, -50%);
+      transform: scale(0) translate(0, -50%)
+    }
+
+    .menu__icon._active:before {
+      top: 50%;
+      width: 100%;
+      -webkit-transform: rotate(-45deg) translate(0, -50%);
+      transform: rotate(-45deg) translate(0, -50%)
+    }
+
+    .menu__icon._active:after {
+      bottom: 50%;
+      width: 100%;
+      -webkit-transform: rotate(45deg) translate(0, 50%);
+      transform: rotate(45deg) translate(0, 50%)
+    }
+
+    @media(max-width: 980px) {
+      display: block;
+    }
+
+    @keyframes animation {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+
+  @media(max-width: 980px) {
+    display: block;
+  }
+}

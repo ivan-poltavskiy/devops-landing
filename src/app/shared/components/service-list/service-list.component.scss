@@ -1,0 +1,50 @@
+@import 'src/styles/variables';
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 84px;
+
+  .services-image {
+    margin-bottom: 42px;
+  }
+
+  .services-desc {
+    text-align: center;
+
+    @media(max-width: 730px) {
+      margin-bottom: 60px;
+      border-bottom: 1px solid #DCD1BB;
+      padding-bottom: 80px;
+    }
+  }
+
+  .services-title {
+    font-family: $gilroy;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: $black;
+    margin-bottom: 19px;
+  }
+
+  .services-subtitle {
+    width: 270px;
+    font-family: $gilroy;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 170%;
+    color: $grey;
+  }
+
+  @media(max-width: 730px) {
+    justify-content: center;
+  }
+
+  @media(max-width: 395px) {
+    justify-content: center;
+  }
+}

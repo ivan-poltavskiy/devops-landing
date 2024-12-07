@@ -1,0 +1,129 @@
+@import 'src/styles/variables';
+
+.portfolio-title {
+  text-align: center;
+  font-family: $conv-bn-chester;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 39px;
+  color: $black;
+  margin-bottom: 85px;
+
+  & span {
+    color: $light-orange;
+  }
+
+  @media(max-width: 395px) {
+    font-size: 32px;
+  }
+}
+
+.cards {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-bottom: 78px;
+
+  .card {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @media(max-width: 520px) {
+      justify-content: center;
+    }
+
+    @media(max-width: 420px) {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+
+  .view {
+    margin-top: 40px;
+
+    .view-more {
+      display: none;
+
+      @media(max-width: 520px) {
+        display: block;
+        margin: 0 auto;
+        background: none;
+        border: none;
+        font-family: $gilroy;
+        font-weight: 700;
+        border-bottom: 1px solid $light-orange;
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.params {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+
+
+  .view-more {
+    font-family: $gilroy;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    color: $black;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    @media(max-width: 769px) {
+      display: none;
+    }
+  }
+
+  .params-button {
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-family: $gilroy;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: $black;
+    margin-right: 59px;
+
+    &.active {
+      color: $light-orange;
+      font-weight: 600;
+    }
+
+    &:hover {
+      color: $light-orange;
+    }
+
+    @media(max-width: 965px) {
+      margin-right: 20px;
+    }
+
+    @media(max-width: 450px) {
+      font-size: 13px;
+      margin-right: 8px;
+    }
+  }
+
+  @media(max-width: 520px) {
+    justify-content: center;
+  }
+}
+
+@media(max-width: 520px) {
+  .portfolio-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
