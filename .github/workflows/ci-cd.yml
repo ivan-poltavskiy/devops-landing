@@ -59,4 +59,4 @@ jobs:
       - name: Build and Push Docker Image to Docker Hub
         run: |
           docker build -t alanut93/devops-pr-4:1.1.1 .
-          docker push docker push alanut93/devops-pr-4:1.1.1
+          docker push alanut93/devops-pr-4:1.1.1
