@@ -52,11 +52,11 @@ jobs:
 
       - name: Build and Push Docker Image to GCR
         run: |
-          docker build -t gcr.io/mythical-harbor-435609-d3/test-landing:1.1.1 .
-          docker push gcr.io/mythical-harbor-435609-d3/test-landing:1.1.1
+          docker build -t gcr.io/pr-3-436414/devops-pr-4:1.1.1 .
+          docker push gcr.io/pr-3-436414/devops-pr-4:1.1.1
 
 
       - name: Build and Push Docker Image to Docker Hub
         run: |
-          docker build -t kirillstasiukdev/test_landing_page_angular:1.1.1 .
-          docker push kirillstasiukdev/test_landing_page_angular:1.1.1
+          docker build -t alanut93/devops-pr-4:1.1.1 .
+          docker push docker push alanut93/devops-pr-4:1.1.1
