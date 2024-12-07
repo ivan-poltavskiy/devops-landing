@@ -1,4 +1,4 @@
-name: CI/CD for Angular Project
+name: Push images to GCR and to Dockerhub
 
 on:
   push:
@@ -13,25 +13,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the code
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16
 
-      # Install dependencies
       - name: Install Dependencies
         run: npm install
 
-      # Build the Angular project
       - name: Build Angular Project
         run: npm run build
 
-      # Run tests
       - name: Run Tests
         run: npm run test --watch=false --browsers=ChromeHeadless
 
@@ -39,18 +34,15 @@ jobs:
     needs: build-and-test
     runs-on: ubuntu-latest
     steps:
-      # Checkout the code
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Log in to Docker Hub
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      # Login to Cloud Provider
       - name: Log in to Google Cloud
         uses: docker/login-action@v2
         with:
@@ -58,17 +50,13 @@ jobs:
           username: _json_key
           password: ${{ secrets.GCLOUD_AUTH }}
 
-      # Build Docker Image
-      - name: Build Docker Image
+      - name: Build and Push Docker Image to GCR
         run: |
-          docker build -t gcr.io/mythical-harbor-435609-d3/test-landing:1.0.0 .
+          docker build -t gcr.io/mythical-harbor-435609-d3/test-landing:1.1.1 .
+          docker push gcr.io/mythical-harbor-435609-d3/test-landing:1.1.1
 
-      # Push Docker Image
-      - name: Push Docker Image
-        run: |
-          docker push gcr.io/mythical-harbor-435609-d3/test-landing:1.0.0
 
-      - name: Push in Docker Hub
+      - name: Build and Push Docker Image to Docker Hub
         run: |
-          docker build -t kirillstasiukdev/test_landing_page_angular:1.0.0 .
-          docker push kirillstasiukdev/test_landing_page_angular:1.0.0
+          docker build -t kirillstasiukdev/test_landing_page_angular:1.1.1 .
+          docker push kirillstasiukdev/test_landing_page_angular:1.1.1
